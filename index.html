@@ -1,333 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sundhar Karunanidi | Backend Engineer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sundhar Karunanidi | Backend Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<!-- ========== PIXEL NAV ========== -->
-<nav class="pixel-nav">
-    <span class="nav-brand">SUNDHAR K.</span>
-    <button class="nav-toggle" id="navToggle">☰</button>
-    <div class="nav-links" id="navLinks">
-        <a href="#title" data-screen="0">START</a>
-        <a href="#projects" data-screen="1">PROJECTS</a>
-        <a href="#boss" data-screen="2">CV</a>
-        <a href="#contact" data-screen="3">CONTACT</a>
-        <a href="https://medium.com/@sundhardevkarunanidi" target="_blank">BLOG ↗</a>
-    </div>
+<!-- NAV -->
+<nav class="pnav">
+  <span class="brand">SUNDHAR K.</span>
+  <button class="nav-tog" id="navTog">☰</button>
+  <div class="links" id="navLinks">
+    <a href="#intro" data-s="0">START</a>
+    <a href="#projects" data-s="1">PROJECTS</a>
+    <a href="#boss" data-s="2">CV</a>
+    <a href="#contact" data-s="3">CONTACT</a>
+    <a href="https://medium.com/@sundhardevkarunanidi" target="_blank">BLOG ↗</a>
+  </div>
 </nav>
 
-<!-- ========== GAME WRAPPER (horizontal scroll) ========== -->
-<div class="game-wrapper" id="gameWrapper">
+<!-- PARALLAX LAYERS -->
+<div class="bg-sky" id="bgSky"></div>
+<div class="bg-mtn" id="bgMtn"></div>
+<div class="bg-grave" id="bgGrave"></div>
+<div class="floor"></div>
 
-    <!-- ────────────────────────────────────────────────────
-         SCREEN 1 — TITLE / ENTRANCE
-         ──────────────────────────────────────────────────── -->
-    <section class="screen screen-title" id="title">
-        <div class="wall">
-            <!-- sky elements -->
-            <div class="sky-layer">
-                <div class="moon"></div>
-                <div class="star" style="top:8%;left:5%;--t:2.4s"></div>
-                <div class="star" style="top:15%;left:22%;--t:3.8s"></div>
-                <div class="star" style="top:6%;left:40%;--t:2.1s"></div>
-                <div class="star" style="top:20%;left:58%;--t:4.2s"></div>
-                <div class="star" style="top:10%;left:75%;--t:3.1s"></div>
-                <div class="star" style="top:25%;left:88%;--t:2.7s"></div>
-                <div class="star" style="top:5%;left:92%;--t:3.5s"></div>
-                <div class="star" style="top:18%;left:35%;--t:4.6s"></div>
-                <div class="star" style="top:12%;left:50%;--t:2.9s"></div>
-                <div class="star" style="top:22%;left:68%;--t:3.3s"></div>
-            </div>
+<!-- PLAYER SPRITE -->
+<div class="player idle" id="player"></div>
 
-            <!-- bats -->
-            <div class="bat" style="top:14%;--bat-dur:14s">
-                <div class="bat-body">
-                    <div class="bat-wing l"></div>
-                    <div class="bat-wing r"></div>
-                </div>
-            </div>
-            <div class="bat" style="top:22%;--bat-dur:18s;animation-delay:-6s">
-                <div class="bat-body">
-                    <div class="bat-wing l"></div>
-                    <div class="bat-wing r"></div>
-                </div>
-            </div>
-            <div class="bat" style="top:9%;--bat-dur:11s;animation-delay:-3s">
-                <div class="bat-body">
-                    <div class="bat-wing l"></div>
-                    <div class="bat-wing r"></div>
-                </div>
-            </div>
+<!-- SCROLL PROMPT -->
+<div class="scroll-hint" id="scrollHint">SCROLL &gt;&gt;&gt;</div>
 
-            <div class="title-block">
-                <img class="portrait" src="images/Sundhar.jpeg" alt="Sundhar Karunanidi" />
-                <h1>SUNDHAR<br>KARUNANIDI</h1>
-                <p class="subtitle">.NET FULL STACK DEVELOPER</p>
-                <p class="subtitle">C# &bull; Python &bull; JS &bull; Azure &bull; AWS</p>
-                <div class="btn-row">
-                    <a class="pixel-btn" href="https://medium.com/@sundhardevkarunanidi" target="_blank">ENTER BLOG</a>
-                    <a class="pixel-btn crimson" href="#boss" data-screen="2">SKIP TO BOSS</a>
-                </div>
-            </div>
+<!-- SNAP-SCROLL SECTIONS -->
+<div class="scroller" id="scroller">
+
+  <!-- ===== 1. INTRO / GRAVEYARD ===== -->
+  <section class="sec sec-intro" id="intro">
+    <div class="col-deco" style="left:6%"></div>
+    <div class="col-deco" style="right:6%"></div>
+    <div class="zone">
+      <img class="portrait" src="images/Sundhar.jpeg" alt="Sundhar Karunanidi"/>
+      <h1>SUNDHAR<br>KARUNANIDI</h1>
+      <p class="sub">.NET FULL STACK DEVELOPER</p>
+      <p class="sub">C# • Python • JS • Azure • AWS</p>
+      <div class="btn-row">
+        <a class="pbtn" href="https://medium.com/@sundhardevkarunanidi" target="_blank">ENTER BLOG</a>
+        <a class="pbtn red" href="#boss" data-s="2">SKIP TO BOSS</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2. PROJECT HALL ===== -->
+  <section class="sec sec-projects" id="projects">
+    <div class="col-deco" style="left:3%"></div>
+    <div class="col-deco" style="right:3%"></div>
+    <div class="zone">
+      <h1>— THE GREAT HALL —</h1>
+      <div class="doors">
+        <a class="door" href="https://github.com/Skarbot88/hoops-pulse" target="_blank">
+          <h3>HOOPS PULSE</h3>
+          <span class="tch">.NET • RabbitMQ • MAF</span>
+          <p class="dsc">A .NET service watching live basketball games, pushing updates through RabbitMQ with message-driven architecture.</p>
+          <span class="ent">&gt; ENTER &lt;</span>
+        </a>
+        <a class="door" href="https://github.com/Skarbot88/WebScraperBackend" target="_blank">
+          <h3>WEB SCRAPER<br>BACKEND</h3>
+          <span class="tch">C# • .NET API</span>
+          <p class="dsc">A backend scraper service that fetches and processes page data, exposing it through a REST API.</p>
+          <span class="ent">&gt; ENTER &lt;</span>
+        </a>
+        <a class="door" href="https://github.com/Skarbot88/WebScraperFrontend" target="_blank">
+          <h3>WEB SCRAPER<br>FRONTEND</h3>
+          <span class="tch">React JS</span>
+          <p class="dsc">A lightweight React front end calling the Web Scraper Backend and displaying results to the user.</p>
+          <span class="ent">&gt; ENTER &lt;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. BOSS ROOM (CV) ===== -->
+  <section class="sec sec-boss" id="boss">
+    <div class="zone">
+      <span class="boss-label">— WARNING —</span>
+      <div class="boss-sprite" id="bossSprite"></div>
+      <div class="explosion" id="explosion"></div>
+      <h2 class="boss-name">CURRICULUM VITAE</h2>
+      <div class="hp-wrap">
+        <div class="hp-lbl">HP</div>
+        <div class="hp-bar"><div class="hp-fill" id="hpFill"></div></div>
+      </div>
+      <p class="boss-desc">Backend Engineer • C#, ASP.Net, JS, Python • Enterprise CI/CD for Greene King, Bet365, Electrolux &amp; government orgs • Azure &amp; AWS • Sustainable coding research</p>
+      <div class="loot" id="loot">
+        <p>★ BOSS DEFEATED — LOOT DROPPED ★</p>
+        <a class="pbtn grn" href="files/Sundhar_Karunanidi_DotNet_CV_Updated.pdf" download>DOWNLOAD CV.PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. VICTORY / CONTACT ===== -->
+  <section class="sec sec-contact" id="contact">
+    <div class="col-deco" style="left:4%"></div>
+    <div class="col-deco" style="right:4%"></div>
+    <div class="zone">
+      <h1>— QUEST COMPLETE —</h1>
+      <div class="c-info">
+        <a href="tel:+447950493848"><i class="fa fa-phone"></i> CALL</a>
+        <a href="mailto:sundhardevkarunanidi@gmail.com"><i class="fa fa-envelope"></i> EMAIL</a>
+        <a href="https://twitter.com/SkarDuub" target="_blank"><i class="fa fa-twitter"></i> TWITTER</a>
+      </div>
+      <form class="pform" action="https://formspree.io/f/mgervpnl" method="POST">
+        <div class="fr">
+          <div><label for="fn">FIRST NAME</label><input type="text" id="fn" name="firstname" placeholder="Your name..."></div>
+          <div><label for="ln">LAST NAME</label><input type="text" id="ln" name="lastname" placeholder="Last name..."></div>
         </div>
-        <div class="floor">
-            <span class="scroll-prompt">SCROLL &gt;&gt;&gt;</span>
-        </div>
-    </section>
+        <label for="em">EMAIL</label>
+        <input type="email" id="em" name="email" placeholder="Your email...">
+        <label for="rs">REASON</label>
+        <select id="rs" name="reason">
+          <option value="job">Job Enquiry</option>
+          <option value="webcreate">Website Creation</option>
+          <option value="general">General Enquiry</option>
+        </select>
+        <label for="msg">MESSAGE</label>
+        <textarea id="msg" name="subject" placeholder="Write something..."></textarea>
+        <button type="submit" class="pbtn">SEND MESSAGE</button>
+      </form>
+      <div class="socials">
+        <a href="https://github.com/Skarbot88/" target="_blank"><i class="fa fa-github"></i></a>
+        <a href="https://twitter.com/SkarDuub" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="mailto:sundhardevkarunanidi@gmail.com"><i class="fa fa-envelope"></i></a>
+        <a href="https://medium.com/@sundhardevkarunanidi" target="_blank"><i class="fa fa-medium"></i></a>
+      </div>
+      <div class="pfooter">LONDON BASED • © 2026 SUNDHAR KARUNANIDI</div>
+    </div>
+  </section>
 
-    <!-- ────────────────────────────────────────────────────
-         SCREEN 2 — PROJECT HALL
-         ──────────────────────────────────────────────────── -->
-    <section class="screen screen-projects" id="projects">
-        <div class="wall">
-            <!-- torches -->
-            <div class="torch torch-left">
-                <div class="torch-flame"></div>
-                <div class="torch-bracket"></div>
-                <div class="torch-base"></div>
-            </div>
-            <div class="torch torch-right">
-                <div class="torch-flame"></div>
-                <div class="torch-bracket"></div>
-                <div class="torch-base"></div>
-            </div>
-            <div class="torch torch-left-low">
-                <div class="torch-flame"></div>
-                <div class="torch-bracket"></div>
-                <div class="torch-base"></div>
-            </div>
-            <div class="torch torch-right-low">
-                <div class="torch-flame"></div>
-                <div class="torch-bracket"></div>
-                <div class="torch-base"></div>
-            </div>
-
-            <div class="projects-content">
-                <h2>— THE GREAT HALL —</h2>
-                <div class="project-doors">
-
-                    <a class="door" href="https://github.com/Skarbot88/hoops-pulse" target="_blank">
-                        <h3>HOOPS PULSE</h3>
-                        <span class="tech">.NET &bull; RabbitMQ &bull; MAF</span>
-                        <p class="desc">A .NET service watching live basketball games, pushing updates through RabbitMQ with a message-driven architecture.</p>
-                        <span class="enter-label">&gt; ENTER &lt;</span>
-                    </a>
-
-                    <a class="door" href="https://github.com/Skarbot88/WebScraperBackend" target="_blank">
-                        <h3>WEB SCRAPER<br>BACKEND</h3>
-                        <span class="tech">C# &bull; .NET API</span>
-                        <p class="desc">A backend scraper service that fetches and processes page data, exposing it through a REST API.</p>
-                        <span class="enter-label">&gt; ENTER &lt;</span>
-                    </a>
-
-                    <a class="door" href="https://github.com/Skarbot88/WebScraperFrontend" target="_blank">
-                        <h3>WEB SCRAPER<br>FRONTEND</h3>
-                        <span class="tech">React JS</span>
-                        <p class="desc">A lightweight React front end calling the Web Scraper Backend and displaying results to the user.</p>
-                        <span class="enter-label">&gt; ENTER &lt;</span>
-                    </a>
-
-                </div>
-            </div>
-        </div>
-        <div class="floor">
-            <span class="scroll-prompt">SCROLL &gt;&gt;&gt;</span>
-        </div>
-    </section>
-
-    <!-- ────────────────────────────────────────────────────
-         SCREEN 3 — BOSS ROOM (CV)
-         ──────────────────────────────────────────────────── -->
-    <section class="screen screen-boss" id="boss">
-        <div class="wall">
-            <!-- torches -->
-            <div class="torch torch-left">
-                <div class="torch-flame"></div>
-                <div class="torch-bracket"></div>
-                <div class="torch-base"></div>
-            </div>
-            <div class="torch torch-right">
-                <div class="torch-flame"></div>
-                <div class="torch-bracket"></div>
-                <div class="torch-base"></div>
-            </div>
-
-            <div class="boss-content" id="bossContent">
-                <span class="boss-label">— WARNING —</span>
-                <h2 class="boss-name">CURRICULUM VITAE</h2>
-                <div class="boss-hp-wrapper">
-                    <div class="boss-hp-label">HP</div>
-                    <div class="boss-hp-bar">
-                        <div class="boss-hp-fill" id="bossHp"></div>
-                    </div>
-                </div>
-                <p class="boss-desc">Backend Engineer experienced in C#, ASP.Net, JS, Python. Enterprise CI/CD for Greene King, APM, Bet365, Electrolux and government organisations. Azure &amp; AWS. Sustainable coding &amp; carbon tracking research.</p>
-
-                <div class="loot-drop" id="lootDrop">
-                    <p style="font-size:7px;color:#d4a017;margin-bottom:8px">★ BOSS DEFEATED — LOOT DROPPED ★</p>
-                    <a class="pixel-btn green" href="files/Sundhar_Karunanidi_DotNet_CV_Updated.pdf" download>DOWNLOAD CV.PDF</a>
-                </div>
-            </div>
-        </div>
-        <div class="floor">
-            <span class="scroll-prompt">SCROLL &gt;&gt;&gt;</span>
-        </div>
-    </section>
-
-    <!-- ────────────────────────────────────────────────────
-         SCREEN 4 — CONTACT / VICTORY
-         ──────────────────────────────────────────────────── -->
-    <section class="screen screen-contact" id="contact">
-        <div class="wall">
-            <!-- torches -->
-            <div class="torch torch-left">
-                <div class="torch-flame"></div>
-                <div class="torch-bracket"></div>
-                <div class="torch-base"></div>
-            </div>
-            <div class="torch torch-right">
-                <div class="torch-flame"></div>
-                <div class="torch-bracket"></div>
-                <div class="torch-base"></div>
-            </div>
-
-            <div class="contact-content">
-                <h2 class="victory-text">— QUEST COMPLETE —</h2>
-
-                <div class="contact-info">
-                    <a href="tel:+447950493848"><i class="fa fa-phone"></i> CALL</a>
-                    <a href="mailto:sundhardevkarunanidi@gmail.com"><i class="fa fa-envelope"></i> EMAIL</a>
-                    <a href="https://twitter.com/SkarDuub" target="_blank"><i class="fa fa-twitter"></i> TWITTER</a>
-                </div>
-
-                <form class="pixel-form" action="https://formspree.io/f/mgervpnl" method="POST">
-                    <div class="form-row">
-                        <div>
-                            <label for="fname">FIRST NAME</label>
-                            <input type="text" id="fname" name="firstname" placeholder="Your name...">
-                        </div>
-                        <div>
-                            <label for="lname">LAST NAME</label>
-                            <input type="text" id="lname" name="lastname" placeholder="Last name...">
-                        </div>
-                    </div>
-                    <label for="email">EMAIL</label>
-                    <input type="email" id="email" name="email" placeholder="Your email...">
-                    <label for="reason">REASON</label>
-                    <select id="reason" name="reason">
-                        <option value="job">Job Enquiry</option>
-                        <option value="webcreate">Website Creation</option>
-                        <option value="general">General Enquiry</option>
-                    </select>
-                    <label for="subject">MESSAGE</label>
-                    <textarea id="subject" name="subject" placeholder="Write something..."></textarea>
-                    <button type="submit" class="pixel-btn">SEND MESSAGE</button>
-                </form>
-
-                <div class="socials-row">
-                    <a href="https://github.com/Skarbot88/" target="_blank"><i class="fa fa-github"></i></a>
-                    <a href="https://twitter.com/SkarDuub" target="_blank"><i class="fa fa-twitter"></i></a>
-                    <a href="mailto:sundhardevkarunanidi@gmail.com"><i class="fa fa-envelope"></i></a>
-                    <a href="https://medium.com/@sundhardevkarunanidi" target="_blank"><i class="fa fa-medium"></i></a>
-                </div>
-
-                <div class="pixel-footer">LONDON BASED &bull; &copy; 2026 SUNDHAR KARUNANIDI</div>
-            </div>
-        </div>
-        <div class="floor"></div>
-    </section>
-
-</div><!-- /game-wrapper -->
+</div>
 
 <script>
-(function () {
-    var wrapper = document.getElementById('gameWrapper');
-    var screens = document.querySelectorAll('.screen');
-    var navLinks = document.querySelectorAll('.pixel-nav [data-screen]');
-    var navToggle = document.getElementById('navToggle');
-    var navLinksEl = document.getElementById('navLinks');
-    var bossHp = document.getElementById('bossHp');
-    var lootDrop = document.getElementById('lootDrop');
-    var bossTriggered = false;
+(function(){
+  var scroller = document.getElementById('scroller');
+  var player   = document.getElementById('player');
+  var hpFill   = document.getElementById('hpFill');
+  var loot     = document.getElementById('loot');
+  var bossEl   = document.getElementById('bossSprite');
+  var explEl   = document.getElementById('explosion');
+  var hint     = document.getElementById('scrollHint');
+  var navLinks = document.querySelectorAll('[data-s]');
+  var navTog   = document.getElementById('navTog');
+  var navMenu  = document.getElementById('navLinks');
 
-    // --- Mobile nav toggle ---
-    navToggle.addEventListener('click', function () {
-        navLinksEl.classList.toggle('open');
+  var lastX = 0, scrollTimer = null, wheelLock = false;
+  var bossTriggered = false, bossDefeated = false;
+
+  // — Mobile nav —
+  navTog.addEventListener('click', function(){ navMenu.classList.toggle('open'); });
+
+  // — Nav links: snap to section —
+  navLinks.forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      var idx = parseInt(this.getAttribute('data-s'));
+      scroller.scrollTo({ left: idx * window.innerWidth, behavior: 'smooth' });
+      navMenu.classList.remove('open');
     });
+  });
 
-    // --- Nav: scroll to screen ---
-    navLinks.forEach(function (link) {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            var idx = parseInt(this.getAttribute('data-screen'));
-            screens[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-            navLinksEl.classList.remove('open');
-        });
-    });
+  // — Wheel → horizontal snap (one section at a time) —
+  scroller.addEventListener('wheel', function(e){
+    e.preventDefault();
+    if (wheelLock) return;
+    if (Math.abs(e.deltaY) < 8) return;
+    wheelLock = true;
+    var vw = window.innerWidth;
+    var cur = Math.round(scroller.scrollLeft / vw);
+    var next = e.deltaY > 0 ? Math.min(cur + 1, 3) : Math.max(cur - 1, 0);
+    if (next !== cur) {
+      scroller.scrollTo({ left: next * vw, behavior: 'smooth' });
+    }
+    setTimeout(function(){ wheelLock = false; }, 700);
+  }, { passive: false });
 
-    // --- Convert vertical mousewheel to horizontal scroll ---
-    wrapper.addEventListener('wheel', function (e) {
-        // Only hijack if the scroll is mostly vertical
-        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-            e.preventDefault();
-            wrapper.scrollLeft += e.deltaY * 2;
-        }
-    }, { passive: false });
+  // — Keyboard nav —
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      e.preventDefault();
+      var vw = window.innerWidth;
+      var cur = Math.round(scroller.scrollLeft / vw);
+      var next = Math.min(cur + 1, 3);
+      scroller.scrollTo({ left: next * vw, behavior: 'smooth' });
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      var vw = window.innerWidth;
+      var cur = Math.round(scroller.scrollLeft / vw);
+      var prev = Math.max(cur - 1, 0);
+      scroller.scrollTo({ left: prev * vw, behavior: 'smooth' });
+    }
+  });
 
-    // --- Highlight active nav link on scroll ---
-    function updateActiveNav() {
-        var scrollLeft = wrapper.scrollLeft;
-        var vw = window.innerWidth;
-        var currentIdx = Math.round(scrollLeft / vw);
+  // — Scroll listener: parallax + player animation —
+  scroller.addEventListener('scroll', function(){
+    var sx = scroller.scrollLeft;
+    var dx = sx - lastX;
+    lastX = sx;
 
-        navLinks.forEach(function (link) {
-            var idx = parseInt(link.getAttribute('data-screen'));
-            if (idx === currentIdx) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
+    // Parallax
+    document.getElementById('bgSky').style.backgroundPositionX   = (-sx * 0.03) + 'px';
+    document.getElementById('bgMtn').style.backgroundPositionX   = (-sx * 0.1)  + 'px';
+    document.getElementById('bgGrave').style.backgroundPositionX = (-sx * 0.25) + 'px';
 
-        // --- Boss HP drain trigger ---
-        if (currentIdx === 2 && !bossTriggered) {
-            bossTriggered = true;
-            // Small delay so the user sees the full bar first
-            setTimeout(function () {
-                bossHp.classList.add('drain');
-                lootDrop.classList.add('show');
-            }, 400);
-        }
+    // Player runs in scroll direction
+    if (Math.abs(dx) > 0.5) {
+      player.className = dx > 0 ? 'player run-r' : 'player run-l';
     }
 
-    wrapper.addEventListener('scroll', updateActiveNav);
-    updateActiveNav();
+    // Hide hint after first scroll
+    if (sx > 50) hint.style.opacity = '0';
 
-    // --- Keyboard navigation (arrow keys) ---
-    document.addEventListener('keydown', function (e) {
-        var scrollLeft = wrapper.scrollLeft;
-        var vw = window.innerWidth;
-        var currentIdx = Math.round(scrollLeft / vw);
+    // When scrolling stops → idle or section-specific state
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(function(){ onSnap(); }, 180);
+  });
 
-        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-            e.preventDefault();
-            var next = Math.min(currentIdx + 1, screens.length - 1);
-            screens[next].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-            e.preventDefault();
-            var prev = Math.max(currentIdx - 1, 0);
-            screens[prev].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-        }
+  function onSnap(){
+    var vw = window.innerWidth;
+    var section = Math.round(scroller.scrollLeft / vw);
+
+    // Update nav highlights
+    navLinks.forEach(function(a){
+      var s = a.getAttribute('data-s');
+      if (s !== null) {
+        a.classList.toggle('on', parseInt(s) === section);
+      }
     });
+
+    // Section-specific behavior
+    if (section === 2 && !bossDefeated) {
+      triggerBoss();
+    } else {
+      player.className = 'player idle';
+    }
+  }
+
+  function triggerBoss(){
+    player.className = 'player attack';
+    if (bossTriggered) return;
+    bossTriggered = true;
+
+    // HP drain
+    setTimeout(function(){
+      hpFill.classList.add('drain');
+
+      // Boss dies after HP drains
+      setTimeout(function(){
+        bossEl.classList.add('dead');
+        explEl.classList.add('go');
+
+        // Explosion ends → loot drops
+        setTimeout(function(){
+          explEl.classList.remove('go');
+          loot.classList.add('show');
+          bossDefeated = true;
+          player.className = 'player idle';
+        }, 650);
+      }, 2600);
+    }, 400);
+  }
+
+  // Init
+  onSnap();
 })();
 </script>
-
 </body>
 </html>
