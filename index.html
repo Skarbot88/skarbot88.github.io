@@ -1,278 +1,333 @@
 <!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sundhar Karunanidi | Personal CV Website</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Sundhar Karunanidi | Backend Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="header">
-        <div class="container">
-            <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Sundhar Karunanidi</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#aboutme">About Me</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#githubproj">Github Projects</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#cv">CV</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#contact">Contact Me</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" target="_blank" href="https://medium.com/@sundhardevkarunanidi">Blog</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
+
+<!-- ========== PIXEL NAV ========== -->
+<nav class="pixel-nav">
+    <span class="nav-brand">SUNDHAR K.</span>
+    <button class="nav-toggle" id="navToggle">☰</button>
+    <div class="nav-links" id="navLinks">
+        <a href="#title" data-screen="0">START</a>
+        <a href="#projects" data-screen="1">PROJECTS</a>
+        <a href="#boss" data-screen="2">CV</a>
+        <a href="#contact" data-screen="3">CONTACT</a>
+        <a href="https://medium.com/@sundhardevkarunanidi" target="_blank">BLOG ↗</a>
     </div>
+</nav>
 
-    <div class="container">
-        <div class="row h-100">
-            <div class="col-12 col-md-6 col-sm-6 my-auto">
-                <h1>Welcome to my portfolio</h1>
-                <p>Here you can find out my latest projects<br />Click the link below to be taken straight to my CV</p><br />
-                        <a  class="btn glow-on-hover" href="#cv">CV Express Route</a>
-            </div>
-            <div class="col-12 col-md-6 col-sm-6">
-                <a href="https://medium.com/@sundhardevkarunanidi" target="_blank">
-                    <div id="promo" class="promo" style="--overlay-color: #46b430">
-                        <div class="image-wrapper"><img src="https://images.unsplash.com/photo-1554620121-59e7f3f6e3a4?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=800&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ" /></div>
-                        <h2 class="title1" >Medium Blog</h2>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
+<!-- ========== GAME WRAPPER (horizontal scroll) ========== -->
+<div class="game-wrapper" id="gameWrapper">
 
-
-<div id="aboutme" class="container reveal">
-    <div class="row h-100">
-        <h2 class="title">About Me</h2>
-        <div class="col-12 col-md-6">
-            <img class="profilepic" src="images/Sundhar.jpeg" alt="Sundhar Karunanidi" />
-        </div>
-        <div class="col-12 col-md-6 my-auto">
-            <p>Sundhar Karunanidi .NET Full Stack Developer</p>
-            <h1>C#, Python, Js and any new and interesting tech</h1>
-            <p>
-                <small>Hello and thank you for taking time to read my portfolio. I am a Backend Engineer with lots of experience in C#, ASP.Net (Framework and Core), JavaScript, Python and CPP. Currently I am moving to London and looking at my career role. The majority of work I have done has been for large scale enterprise CI/CD projects for clients such as Greene King, APM, Bet365 and Electrolux as well as numerous goverment organisations. I have also worked in TDD/BDD projects. I have been working with Azure and AWS extensively, with a push to make coding more sustainable with the advent of AI. In my current role I have conducted research into the impact of etensive lambda use and how we can track the VMs behind the scenes and the carbon equivalence of them.</small><br />
-            </p>
-        </div>
-    </div>
-</div>
-
-    <!-----GitHub------->
-    <div id="githubproj" class="container reveal">
-        <h2 class="title">GitHub Projects</h2>
-        <div id="tiles" class="row">
-             <div class="col-lg-4">
-                <a href="https://github.com/Skarbot88/hoops-pulse" target="_blank">
-                    <div class="tile tile-reveal reveal">
-                        <img class="img-fluid" src='https://images.unsplash.com/photo-1518063319789-7217e6706b04?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' />
-                        <div class="text">
-                            <h1>Hoops Pulse</h1>
-                            <h4 class="animate-text">.NET, RabbitMQ, MAF</h4>
-                            <p class="animate-text">A .NET service that watches live basketball games and pushes updates through RabbitMQ, using a message-driven architecture to keep components decoupled.</p>
-                            <div class="dots">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+    <!-- ────────────────────────────────────────────────────
+         SCREEN 1 — TITLE / ENTRANCE
+         ──────────────────────────────────────────────────── -->
+    <section class="screen screen-title" id="title">
+        <div class="wall">
+            <!-- sky elements -->
+            <div class="sky-layer">
+                <div class="moon"></div>
+                <div class="star" style="top:8%;left:5%;--t:2.4s"></div>
+                <div class="star" style="top:15%;left:22%;--t:3.8s"></div>
+                <div class="star" style="top:6%;left:40%;--t:2.1s"></div>
+                <div class="star" style="top:20%;left:58%;--t:4.2s"></div>
+                <div class="star" style="top:10%;left:75%;--t:3.1s"></div>
+                <div class="star" style="top:25%;left:88%;--t:2.7s"></div>
+                <div class="star" style="top:5%;left:92%;--t:3.5s"></div>
+                <div class="star" style="top:18%;left:35%;--t:4.6s"></div>
+                <div class="star" style="top:12%;left:50%;--t:2.9s"></div>
+                <div class="star" style="top:22%;left:68%;--t:3.3s"></div>
             </div>
-            <div class="col-lg-4">
-                <a href="https://github.com/Skarbot88/WebScraperBackend" target="_blank">
-                    <div class="tile tile-reveal reveal">
-                        <img class="img-fluid" src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' />
-                        <div class="text">
-                            <h1>Web Scraper Backend</h1>
-                            <h4 class="animate-text">C#/.NET API</h4>
-                            <p class="animate-text">A simple backend web scraper service that fetches and processes page data, exposing it through an API for a front end to consume.</p>
-                            <div class="dots">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4">
-                <a href="https://github.com/Skarbot88/WebScraperFrontend" target="_blank">
-                    <div class="tile tile-reveal reveal">
-                        <img class="img-fluid" src='https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' />
-                        <div class="text">
-                            <h1>Web Scraper Frontend</h1>
-                            <h4 class="animate-text">React JS</h4>
-                            <p class="animate-text">A lightweight React front end that calls the Web Scraper Backend API and displays the scraped results to the user.</p>
-                            <div class="dots">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
 
-<!----CV----->
-        <div id="cv" class="container reveal">
-            <h2 class="title">Curriculum Vitae</h2>
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h3>Below you will find a link to my CV in PDF form please download to view:</h3>
+            <!-- bats -->
+            <div class="bat" style="top:14%;--bat-dur:14s">
+                <div class="bat-body">
+                    <div class="bat-wing l"></div>
+                    <div class="bat-wing r"></div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 text-center" >
-                    <a href="files/Sundhar_Karunanidi_DotNet_CV_Updated.pdf" class="btn glow-on-hover" download>PDF CV</a>
+            <div class="bat" style="top:22%;--bat-dur:18s;animation-delay:-6s">
+                <div class="bat-body">
+                    <div class="bat-wing l"></div>
+                    <div class="bat-wing r"></div>
                 </div>
             </div>
-            
+            <div class="bat" style="top:9%;--bat-dur:11s;animation-delay:-3s">
+                <div class="bat-body">
+                    <div class="bat-wing l"></div>
+                    <div class="bat-wing r"></div>
+                </div>
+            </div>
+
+            <div class="title-block">
+                <img class="portrait" src="images/Sundhar.jpeg" alt="Sundhar Karunanidi" />
+                <h1>SUNDHAR<br>KARUNANIDI</h1>
+                <p class="subtitle">.NET FULL STACK DEVELOPER</p>
+                <p class="subtitle">C# &bull; Python &bull; JS &bull; Azure &bull; AWS</p>
+                <div class="btn-row">
+                    <a class="pixel-btn" href="https://medium.com/@sundhardevkarunanidi" target="_blank">ENTER BLOG</a>
+                    <a class="pixel-btn crimson" href="#boss" data-screen="2">SKIP TO BOSS</a>
+                </div>
+            </div>
         </div>
-    <!----Contact form---->
+        <div class="floor">
+            <span class="scroll-prompt">SCROLL &gt;&gt;&gt;</span>
+        </div>
+    </section>
 
-    <div id="contact" class="container reveal">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="title">Contact Me</h2>
-                <form action="https://formspree.io/f/mgervpnl" method="POST">
-                    <label for="fname">First Name</label>
-                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <!-- ────────────────────────────────────────────────────
+         SCREEN 2 — PROJECT HALL
+         ──────────────────────────────────────────────────── -->
+    <section class="screen screen-projects" id="projects">
+        <div class="wall">
+            <!-- torches -->
+            <div class="torch torch-left">
+                <div class="torch-flame"></div>
+                <div class="torch-bracket"></div>
+                <div class="torch-base"></div>
+            </div>
+            <div class="torch torch-right">
+                <div class="torch-flame"></div>
+                <div class="torch-bracket"></div>
+                <div class="torch-base"></div>
+            </div>
+            <div class="torch torch-left-low">
+                <div class="torch-flame"></div>
+                <div class="torch-bracket"></div>
+                <div class="torch-base"></div>
+            </div>
+            <div class="torch torch-right-low">
+                <div class="torch-flame"></div>
+                <div class="torch-bracket"></div>
+                <div class="torch-base"></div>
+            </div>
 
-                    <label for="lname">Last Name</label>
-                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+            <div class="projects-content">
+                <h2>— THE GREAT HALL —</h2>
+                <div class="project-doors">
 
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Your email..">
+                    <a class="door" href="https://github.com/Skarbot88/hoops-pulse" target="_blank">
+                        <h3>HOOPS PULSE</h3>
+                        <span class="tech">.NET &bull; RabbitMQ &bull; MAF</span>
+                        <p class="desc">A .NET service watching live basketball games, pushing updates through RabbitMQ with a message-driven architecture.</p>
+                        <span class="enter-label">&gt; ENTER &lt;</span>
+                    </a>
 
-                    <label for="reason">Reason for contacting</label>
+                    <a class="door" href="https://github.com/Skarbot88/WebScraperBackend" target="_blank">
+                        <h3>WEB SCRAPER<br>BACKEND</h3>
+                        <span class="tech">C# &bull; .NET API</span>
+                        <p class="desc">A backend scraper service that fetches and processes page data, exposing it through a REST API.</p>
+                        <span class="enter-label">&gt; ENTER &lt;</span>
+                    </a>
+
+                    <a class="door" href="https://github.com/Skarbot88/WebScraperFrontend" target="_blank">
+                        <h3>WEB SCRAPER<br>FRONTEND</h3>
+                        <span class="tech">React JS</span>
+                        <p class="desc">A lightweight React front end calling the Web Scraper Backend and displaying results to the user.</p>
+                        <span class="enter-label">&gt; ENTER &lt;</span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="floor">
+            <span class="scroll-prompt">SCROLL &gt;&gt;&gt;</span>
+        </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────
+         SCREEN 3 — BOSS ROOM (CV)
+         ──────────────────────────────────────────────────── -->
+    <section class="screen screen-boss" id="boss">
+        <div class="wall">
+            <!-- torches -->
+            <div class="torch torch-left">
+                <div class="torch-flame"></div>
+                <div class="torch-bracket"></div>
+                <div class="torch-base"></div>
+            </div>
+            <div class="torch torch-right">
+                <div class="torch-flame"></div>
+                <div class="torch-bracket"></div>
+                <div class="torch-base"></div>
+            </div>
+
+            <div class="boss-content" id="bossContent">
+                <span class="boss-label">— WARNING —</span>
+                <h2 class="boss-name">CURRICULUM VITAE</h2>
+                <div class="boss-hp-wrapper">
+                    <div class="boss-hp-label">HP</div>
+                    <div class="boss-hp-bar">
+                        <div class="boss-hp-fill" id="bossHp"></div>
+                    </div>
+                </div>
+                <p class="boss-desc">Backend Engineer experienced in C#, ASP.Net, JS, Python. Enterprise CI/CD for Greene King, APM, Bet365, Electrolux and government organisations. Azure &amp; AWS. Sustainable coding &amp; carbon tracking research.</p>
+
+                <div class="loot-drop" id="lootDrop">
+                    <p style="font-size:7px;color:#d4a017;margin-bottom:8px">★ BOSS DEFEATED — LOOT DROPPED ★</p>
+                    <a class="pixel-btn green" href="files/Sundhar_Karunanidi_DotNet_CV_Updated.pdf" download>DOWNLOAD CV.PDF</a>
+                </div>
+            </div>
+        </div>
+        <div class="floor">
+            <span class="scroll-prompt">SCROLL &gt;&gt;&gt;</span>
+        </div>
+    </section>
+
+    <!-- ────────────────────────────────────────────────────
+         SCREEN 4 — CONTACT / VICTORY
+         ──────────────────────────────────────────────────── -->
+    <section class="screen screen-contact" id="contact">
+        <div class="wall">
+            <!-- torches -->
+            <div class="torch torch-left">
+                <div class="torch-flame"></div>
+                <div class="torch-bracket"></div>
+                <div class="torch-base"></div>
+            </div>
+            <div class="torch torch-right">
+                <div class="torch-flame"></div>
+                <div class="torch-bracket"></div>
+                <div class="torch-base"></div>
+            </div>
+
+            <div class="contact-content">
+                <h2 class="victory-text">— QUEST COMPLETE —</h2>
+
+                <div class="contact-info">
+                    <a href="tel:+447950493848"><i class="fa fa-phone"></i> CALL</a>
+                    <a href="mailto:sundhardevkarunanidi@gmail.com"><i class="fa fa-envelope"></i> EMAIL</a>
+                    <a href="https://twitter.com/SkarDuub" target="_blank"><i class="fa fa-twitter"></i> TWITTER</a>
+                </div>
+
+                <form class="pixel-form" action="https://formspree.io/f/mgervpnl" method="POST">
+                    <div class="form-row">
+                        <div>
+                            <label for="fname">FIRST NAME</label>
+                            <input type="text" id="fname" name="firstname" placeholder="Your name...">
+                        </div>
+                        <div>
+                            <label for="lname">LAST NAME</label>
+                            <input type="text" id="lname" name="lastname" placeholder="Last name...">
+                        </div>
+                    </div>
+                    <label for="email">EMAIL</label>
+                    <input type="email" id="email" name="email" placeholder="Your email...">
+                    <label for="reason">REASON</label>
                     <select id="reason" name="reason">
                         <option value="job">Job Enquiry</option>
                         <option value="webcreate">Website Creation</option>
                         <option value="general">General Enquiry</option>
                     </select>
-                    <label for="subject">Subject</label>
-                    <textarea id="subject" name="subject" placeholder="Write something.." style="height: 200px"></textarea>
-                    <input type="submit" value="Submit">
+                    <label for="subject">MESSAGE</label>
+                    <textarea id="subject" name="subject" placeholder="Write something..."></textarea>
+                    <button type="submit" class="pixel-btn">SEND MESSAGE</button>
                 </form>
+
+                <div class="socials-row">
+                    <a href="https://github.com/Skarbot88/" target="_blank"><i class="fa fa-github"></i></a>
+                    <a href="https://twitter.com/SkarDuub" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="mailto:sundhardevkarunanidi@gmail.com"><i class="fa fa-envelope"></i></a>
+                    <a href="https://medium.com/@sundhardevkarunanidi" target="_blank"><i class="fa fa-medium"></i></a>
+                </div>
+
+                <div class="pixel-footer">LONDON BASED &bull; &copy; 2026 SUNDHAR KARUNANIDI</div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <footer class="footer-distributed">
+        <div class="floor"></div>
+    </section>
 
-            <div class="footer-left">
-                <img />
-                <h3>Sundhar Karunanidi</h3>
-
-                <p class="footer-links">
-                    <a href="#">Back to top</a>
-                    |
-                    <a href="#githubproj">GitHubProjects</a>
-                    |
-                    <a href="#aboutme">About Me</a>
-                    |
-                    <a href="#contact">Contact</a>
-                </p>
-
-                <p class="footer-company-name">© 2026</p>
-            </div>
-
-            <div class="footer-center">
-                <div class="contact-icon">
-                    <i class="fa fa-map-marker"></i>
-                    <p>
-                        <span>
-                            London Based
-                        </span>
-                    </p>
-                </div>
-
-                <div class="contact-icon">
-                    <i class="fa fa-phone"></i>
-                    <p><a href="tel:+447950493848">Call / message my mobile</a></p>
-                </div>
-                <div class="contact-icon">
-                    <i class="fa fa-envelope"></i>
-                    <p><a href="mailto:sundhardevkarunanidi@gmail.com">Email Me</a></p>
-                </div>
-            </div>
-            <div class="footer-right">
-                <p class="footer-company-about">
-                    <span>Socials</span>
-                    Use the links below for links to my socials:
-                </p>
-                <div class="footer-icons">
-                    <div class="row">
-                        <div class="col-4">
-                            <a href="https://github.com/Skarbot88/" target="_blank"><i class="fa fa-github"></i></a>
-                        </div>
-                        <div class="col-4">
-                            <a href="https://twitter.com/SkarDuub" target="_blank"><i class="fa fa-twitter"></i></a>
-                        </div>
-                        <div class="col-4">
-                            <a href="mailto:sundhardevkarunanidi@gmail.com" target="_blank"><i class="fa fa-envelope-square"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <a id="backToTop" href="#"><i class="fa fa-arrow-up"></i></a>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+</div><!-- /game-wrapper -->
 
 <script>
-    // Scroll-reveal: fade/slide sections and project tiles into view as the user scrolls
-    document.addEventListener('DOMContentLoaded', function () {
-        var revealEls = document.querySelectorAll('.reveal');
-        var observer = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15 });
-        revealEls.forEach(function (el) { observer.observe(el); });
+(function () {
+    var wrapper = document.getElementById('gameWrapper');
+    var screens = document.querySelectorAll('.screen');
+    var navLinks = document.querySelectorAll('.pixel-nav [data-screen]');
+    var navToggle = document.getElementById('navToggle');
+    var navLinksEl = document.getElementById('navLinks');
+    var bossHp = document.getElementById('bossHp');
+    var lootDrop = document.getElementById('lootDrop');
+    var bossTriggered = false;
 
-        // Back-to-top button show/hide + smooth scroll
-        var backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', function () {
-            if (window.scrollY > 400) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
-        });
-        backToTop.addEventListener('click', function (e) {
+    // --- Mobile nav toggle ---
+    navToggle.addEventListener('click', function () {
+        navLinksEl.classList.toggle('open');
+    });
+
+    // --- Nav: scroll to screen ---
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            var idx = parseInt(this.getAttribute('data-screen'));
+            screens[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+            navLinksEl.classList.remove('open');
         });
     });
+
+    // --- Convert vertical mousewheel to horizontal scroll ---
+    wrapper.addEventListener('wheel', function (e) {
+        // Only hijack if the scroll is mostly vertical
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+            e.preventDefault();
+            wrapper.scrollLeft += e.deltaY * 2;
+        }
+    }, { passive: false });
+
+    // --- Highlight active nav link on scroll ---
+    function updateActiveNav() {
+        var scrollLeft = wrapper.scrollLeft;
+        var vw = window.innerWidth;
+        var currentIdx = Math.round(scrollLeft / vw);
+
+        navLinks.forEach(function (link) {
+            var idx = parseInt(link.getAttribute('data-screen'));
+            if (idx === currentIdx) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+
+        // --- Boss HP drain trigger ---
+        if (currentIdx === 2 && !bossTriggered) {
+            bossTriggered = true;
+            // Small delay so the user sees the full bar first
+            setTimeout(function () {
+                bossHp.classList.add('drain');
+                lootDrop.classList.add('show');
+            }, 400);
+        }
+    }
+
+    wrapper.addEventListener('scroll', updateActiveNav);
+    updateActiveNav();
+
+    // --- Keyboard navigation (arrow keys) ---
+    document.addEventListener('keydown', function (e) {
+        var scrollLeft = wrapper.scrollLeft;
+        var vw = window.innerWidth;
+        var currentIdx = Math.round(scrollLeft / vw);
+
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            var next = Math.min(currentIdx + 1, screens.length - 1);
+            screens[next].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            var prev = Math.max(currentIdx - 1, 0);
+            screens[prev].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        }
+    });
+})();
 </script>
+
 </body>
 </html>
