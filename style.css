@@ -39,11 +39,10 @@ img{image-rendering:pixelated}
 .bg-grave{height:30vh;background:url(sprites/graveyard.png) repeat-x left bottom;
   background-size:auto 100%;z-index:2}
 
-/* === FLOOR (outdoor — tileset-ground.png) === */
+/* === FLOOR (outdoor — extracted grass/dirt tiles) === */
 .floor-strip{position:fixed;bottom:0;left:0;right:0;height:var(--floor-h);z-index:3;
-  background:#1a0e18 url(sprites/tileset-ground.png) repeat-x left top;
-  background-size:896px 320px;image-rendering:pixelated;
-  border-top:2px solid #2d1a2a}
+  background:#1a0e18 url(sprites/floor-outdoor.png) repeat-x left top;
+  background-size:auto 96px;image-rendering:pixelated}
 
 /* === PLAYER SPRITE === */
 .player{position:fixed;z-index:50;bottom:var(--floor-h);left:18%;
@@ -91,15 +90,13 @@ img{image-rendering:pixelated}
   background-size:auto 90%;image-rendering:pixelated;opacity:.25;
   filter:hue-rotate(-20deg) saturate(1.4)}
 
-/* -- Indoor floor overlay (tileset.png stone tiles) -- */
+/* -- Indoor floor overlay (extracted stone tiles) -- */
 .sec-indoor::after,.sec-boss-room::after{
   content:'';position:absolute;bottom:0;left:0;right:0;
   height:var(--floor-h);z-index:1;
-  background:#1e1230 url(sprites/tileset.png) repeat-x left bottom;
-  background-size:672px 448px;image-rendering:pixelated;
-  border-top:2px solid #3a2850}
-.sec-boss-room::after{filter:hue-rotate(-15deg) brightness(.8);
-  border-top-color:#3a1520}
+  background:#1e1230 url(sprites/floor-indoor.png) repeat-x left bottom;
+  background-size:auto 96px;image-rendering:pixelated}
+.sec-boss-room::after{filter:hue-rotate(-15deg) brightness(.8)}
 
 /* -- Column decoration (interior only) -- */
 .col-deco{position:absolute;bottom:var(--floor-h);width:114px;height:190px;
