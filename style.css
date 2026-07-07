@@ -29,7 +29,7 @@ img{image-rendering:pixelated}
   .pnav .links a{padding:8px 0;border:0}
 }
 
-/* === PARALLAX BACKGROUND LAYERS === */
+/* === PARALLAX BACKGROUNDS (outdoor) === */
 .bg-sky,.bg-mtn,.bg-grave{position:fixed;left:0;right:0;bottom:0;
   image-rendering:pixelated;pointer-events:none;will-change:background-position}
 .bg-sky{top:0;background:url(sprites/sky.png) repeat-x center bottom;
@@ -39,30 +39,29 @@ img{image-rendering:pixelated}
 .bg-grave{height:30vh;background:url(sprites/graveyard.png) repeat-x left bottom;
   background-size:auto 100%;z-index:2}
 
-/* === FLOOR === */
-.floor{position:fixed;bottom:0;left:0;right:0;height:var(--floor-h);
-  background:#1a0e24;border-top:3px solid #2d1f3d;z-index:3;
-  background-image:repeating-linear-gradient(90deg,transparent 0,transparent 46px,
-    #150b1f 46px,#150b1f 48px)}
+/* === FLOOR (outdoor — tileset-ground.png) === */
+.floor-strip{position:fixed;bottom:0;left:0;right:0;height:var(--floor-h);z-index:3;
+  background:#1a0e18 url(sprites/tileset-ground.png) repeat-x left top;
+  background-size:896px 320px;image-rendering:pixelated;
+  border-top:2px solid #2d1a2a}
 
 /* === PLAYER SPRITE === */
 .player{position:fixed;z-index:50;bottom:var(--floor-h);left:18%;
   width:160px;height:90px;image-rendering:pixelated;
-  transform:scaleX(-1) scale(2);transform-origin:bottom center;
-  pointer-events:none}
+  transform:scale(2);transform-origin:bottom center;pointer-events:none}
 .player.idle{background:url(sprites/hero-idle.png) 0 0/640px 90px;
   animation:sp-idle .9s steps(4) infinite}
 .player.run-r{background:url(sprites/hero-run.png) 0 0/960px 90px;
-  animation:sp-run .45s steps(6) infinite;transform:scaleX(-1) scale(2)}
+  animation:sp-run .45s steps(6) infinite;transform:scale(2)}
 .player.run-l{background:url(sprites/hero-run.png) 0 0/960px 90px;
-  animation:sp-run .45s steps(6) infinite;transform:scaleX(1) scale(2)}
+  animation:sp-run .45s steps(6) infinite;transform:scaleX(-1) scale(2)}
 .player.attack{background:url(sprites/hero-attack.png) 0 0/800px 90px;
-  animation:sp-atk .55s steps(5) infinite;transform:scaleX(-1) scale(2)}
+  animation:sp-atk .55s steps(5) infinite;transform:scale(2)}
 @keyframes sp-idle{to{background-position:-640px 0}}
 @keyframes sp-run{to{background-position:-960px 0}}
 @keyframes sp-atk{to{background-position:-800px 0}}
 
-/* === SCROLL CONTAINER (snap) === */
+/* === SCROLL CONTAINER === */
 .scroller{position:fixed;inset:0;display:flex;overflow-x:auto;overflow-y:hidden;
   scroll-snap-type:x mandatory;scroll-behavior:smooth;z-index:10;
   scrollbar-width:none}
@@ -74,13 +73,41 @@ img{image-rendering:pixelated}
   justify-content:center;align-items:center;position:relative;
   padding:calc(var(--nav-h)+16px) 24px calc(var(--floor-h)+16px)}
 
-/* atmospheric overlay per section */
-.sec-intro{background:transparent}
-.sec-projects{background:rgba(20,12,32,.55)}
-.sec-boss{background:rgba(50,8,8,.5)}
-.sec-contact{background:rgba(10,10,40,.35)}
+/* -- Outdoor section: transparent, parallax shows through -- */
+.sec-outdoor{background:transparent}
 
-/* === CONTENT ZONE (inside each section) === */
+/* -- Indoor sections: castle interior -- */
+.sec-indoor{background:#1a1028}
+.sec-indoor .castle-bg{
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:url(sprites/backgrounds.png) repeat-x bottom center;
+  background-size:auto 90%;image-rendering:pixelated;opacity:.35}
+
+/* -- Boss room: darker red-tinted interior -- */
+.sec-boss-room{background:#180a0a}
+.sec-boss-room .castle-bg{
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:url(sprites/backgrounds.png) repeat-x bottom center;
+  background-size:auto 90%;image-rendering:pixelated;opacity:.25;
+  filter:hue-rotate(-20deg) saturate(1.4)}
+
+/* -- Indoor floor overlay (tileset.png stone tiles) -- */
+.sec-indoor::after,.sec-boss-room::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:var(--floor-h);z-index:1;
+  background:#1e1230 url(sprites/tileset.png) repeat-x left bottom;
+  background-size:672px 448px;image-rendering:pixelated;
+  border-top:2px solid #3a2850}
+.sec-boss-room::after{filter:hue-rotate(-15deg) brightness(.8);
+  border-top-color:#3a1520}
+
+/* -- Column decoration (interior only) -- */
+.col-deco{position:absolute;bottom:var(--floor-h);width:114px;height:190px;
+  background:url(sprites/column.png) center/contain no-repeat;
+  image-rendering:pixelated;opacity:.7;transform:scale(1.8);
+  transform-origin:bottom center;pointer-events:none;z-index:2}
+
+/* === CONTENT ZONE === */
 .zone{position:relative;z-index:5;max-width:900px;width:100%;
   text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
 
@@ -104,7 +131,7 @@ img{image-rendering:pixelated}
 
 /* — Project Doors — */
 .doors{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;width:100%}
-.door{flex:1 1 200px;max-width:260px;background:rgba(22,33,62,.8);
+.door{flex:1 1 200px;max-width:260px;background:rgba(22,33,62,.85);
   border:3px solid var(--stone-lt);border-top:0;position:relative;
   padding:26px 12px 14px;text-align:center;display:flex;flex-direction:column;
   gap:7px;transition:.25s;cursor:pointer;text-decoration:none}
@@ -152,13 +179,14 @@ img{image-rendering:pixelated}
 .pform{width:100%;max-width:440px;display:flex;flex-direction:column;gap:7px;text-align:left}
 .pform label{font-size:6px;color:var(--torch)}
 .pform input,.pform select,.pform textarea{font-family:inherit;font-size:7px;
-  padding:9px;background:var(--void);color:var(--ghost);
+  padding:9px;background:rgba(15,14,23,.85);color:var(--ghost);
   border:2px solid var(--stone-lt);outline:0;transition:.2s;width:100%}
 .pform input:focus,.pform select:focus,.pform textarea:focus{border-color:var(--gold)}
 .pform textarea{min-height:64px;resize:vertical}
 .pform select{cursor:pointer;appearance:none;-webkit-appearance:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M0 2h8L4 7z' fill='%23d4a017'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 9px center;padding-right:24px}
+  background-repeat:no-repeat;background-position:right 9px center;padding-right:24px;
+  background-color:rgba(15,14,23,.85)}
 .pform select option{background:var(--void);color:var(--ghost)}
 .fr{display:flex;gap:10px}
 .fr>div{flex:1;display:flex;flex-direction:column;gap:3px}
@@ -168,31 +196,20 @@ img{image-rendering:pixelated}
 .socials a:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
 .pfooter{font-size:6px;color:rgba(232,232,232,.2)}
 
-/* — Column decoration — */
-.col-deco{position:absolute;bottom:0;width:114px;height:190px;
-  background:url(sprites/column.png) center/contain no-repeat;
-  image-rendering:pixelated;opacity:.7;transform:scale(1.5);transform-origin:bottom center;
-  pointer-events:none;z-index:1}
-
 /* — Scroll prompt — */
 .scroll-hint{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
   font-size:7px;color:var(--gold);opacity:.6;z-index:60;
   animation:hint-bob 1.2s ease-in-out infinite;pointer-events:none}
 @keyframes hint-bob{0%,100%{transform:translateX(-50%)}50%{transform:translateX(calc(-50% + 8px))}}
 
-/* — Reduced motion — */
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;
     animation-iteration-count:1!important;transition-duration:.01ms!important}
-  .scroller{scroll-behavior:auto}
-}
+  .scroller{scroll-behavior:auto}}
 
-/* — Mobile — */
 @media(max-width:680px){
-  .player{left:10%;transform:scaleX(-1) scale(1.5);transform-origin:bottom left}
-  .player.run-r{transform:scaleX(-1) scale(1.5)}
-  .player.run-l{transform:scaleX(1) scale(1.5)}
-  .player.attack{transform:scaleX(-1) scale(1.5)}
+  .player{left:10%;transform:scale(1.5);transform-origin:bottom left}
+  .player.run-l{transform:scaleX(-1) scale(1.5)}
   .doors{flex-direction:column;align-items:center}
   .door{max-width:100%}
   .boss-sprite{transform:scale(1.6)}
@@ -200,4 +217,5 @@ img{image-rendering:pixelated}
   .c-info a{text-align:center}
   .fr{flex-direction:column;gap:7px}
   .portrait{width:60px;height:60px}
+  .col-deco{transform:scale(1.2)}
 }
