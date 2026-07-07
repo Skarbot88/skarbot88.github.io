@@ -6,6 +6,10 @@
     color: white;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     color: white;
@@ -28,10 +32,17 @@ a {
 p{
     color: white;
 }
+
+/* --- Profile photo: fixed, controlled size instead of shrinking to nothing --- */
 .profilepic{
-    max-width:100%;
-    padding: 50px 30px;
-    border-radius: 50%
+    width: 320px;
+    height: 320px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 @media screen and (max-width: 600px) {
@@ -267,6 +278,11 @@ footer {
             line-height: 1.8;
             text-decoration: none;
             color: inherit;
+            transition: color 0.25s ease;
+        }
+
+        .footer-distributed .footer-links a:hover {
+            color: #46b430;
         }
 
     .footer-distributed .footer-company-name {
@@ -294,6 +310,7 @@ footer {
         line-height: 42px;
         margin: 10px 15px;
         vertical-align: middle;
+        transition: background-color 0.25s ease, transform 0.25s ease;
     }
 
         .footer-distributed .contact-icon i.fa-envelope {
@@ -317,7 +334,16 @@ footer {
 
         .footer-distributed .contact-icon p a {
             text-decoration: none;
-            ;
+            transition: color 0.25s ease;
+        }
+
+        .footer-distributed .contact-icon p a:hover {
+            color: #46b430;
+        }
+
+        .footer-distributed .contact-icon:hover i {
+            background-color: #46b430;
+            transform: translateY(-3px);
         }
 
 
@@ -360,6 +386,11 @@ footer {
             line-height: 35px;
             margin-right: 3px;
             margin-bottom: 5px;
+            transition: transform 0.25s ease;
+        }
+
+        .footer-distributed .footer-icons a:hover {
+            transform: translateY(-4px);
         }
 
 /* Responsive Footer */
@@ -408,7 +439,7 @@ footer {
 /*contact styling*/
 
 /* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
+input[type=text], input[type=email], select, textarea {
     width: 100%; /* Full width */
     padding: 12px; /* Some padding */
     border: 1px solid #ccc; /* Gray border */
@@ -432,6 +463,18 @@ input[type=submit] {
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
     background-color: #45a049;
+}
+
+/* Contact form: half width on desktop, full width on smaller screens */
+#contact form {
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+    #contact form {
+        max-width: 100%;
+    }
 }
 
 /*Slide transition Medium*/
@@ -695,3 +738,61 @@ input[type=submit]:hover {
     }
 }
 
+/* --- Scroll reveal: sections and tiles fade/slide in as you scroll --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.tile-reveal:nth-child(1) { transition-delay: 0.05s; }
+.tile-reveal:nth-child(2) { transition-delay: 0.15s; }
+.tile-reveal:nth-child(3) { transition-delay: 0.25s; }
+
+/* --- Nav underline hover --- */
+.navbar-nav .nav-link {
+    position: relative;
+}
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: #46b430;
+    transition: width 0.25s ease;
+}
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* --- Back to top button --- */
+#backToTop {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #46b430;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 999;
+    text-decoration: none;
+}
+#backToTop.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
