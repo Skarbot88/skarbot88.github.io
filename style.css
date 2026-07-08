@@ -96,7 +96,7 @@ img{image-rendering:pixelated}
   height:var(--floor-h);z-index:1;
   background:#1e1230 url(sprites/floor-indoor.png) repeat-x left bottom;
   background-size:auto 96px;image-rendering:pixelated}
-.sec-boss-room::after{filter:hue-rotate(-15deg) brightness(.8)}
+/*.sec-boss-room::after{filter:hue-rotate(-15deg) brightness(.8)}
 
 /* -- Column decoration (interior only) -- */
 .col-deco{position:absolute;bottom:var(--floor-h);width:114px;height:190px;
