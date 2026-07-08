@@ -16,56 +16,54 @@
   <button class="nav-tog" id="navTog">☰</button>
   <div class="links" id="navLinks">
     <a href="#" data-s="0">START</a>
-    <a href="#" data-s="1">PROJECTS</a>
-    <a href="#" data-s="2">CV</a>
-    <a href="#" data-s="3">CONTACT</a>
+    <a href="#" data-s="1">ABOUT</a>
+    <a href="#" data-s="2">PROJECTS</a>
+    <a href="#" data-s="3">CV</a>
+    <a href="#" data-s="4">CONTACT</a>
     <a href="https://medium.com/@sundhardevkarunanidi" target="_blank">BLOG ↗</a>
   </div>
 </nav>
 
-<!-- PARALLAX LAYERS (outdoor) -->
-<div class="bg-sky"   id="bgSky"></div>
-<div class="bg-mtn"   id="bgMtn"></div>
+<!-- PARALLAX BACKGROUNDS -->
+<div class="bg-sky" id="bgSky"></div>
+<div class="bg-mtn" id="bgMtn"></div>
 <div class="bg-grave" id="bgGrave"></div>
+<div class="floor-strip"></div>
 
-<!-- OUTDOOR DECO: trees + gravestones behind floor -->
-<div class="outdoor-deco" id="outdoorDeco">
-  <img class="deco-tree tree-far"  src="sprites/tree-1.png" style="left:4%;bottom:70px;">
-  <img class="deco-tree tree-mid"  src="sprites/tree-3.png" style="left:16%;bottom:70px;">
-  <img class="deco-tree tree-far"  src="sprites/tree-2.png" style="left:26%;bottom:70px;">
-  <img class="deco-stone"          src="sprites/stone-1.png" style="left:8%;bottom:70px;">
-  <img class="deco-stone"          src="sprites/stone-2.png" style="left:11%;bottom:70px;">
-  <img class="deco-stone"          src="sprites/stone-4.png" style="left:22%;bottom:70px;">
-  <img class="deco-stone"          src="sprites/stone-3.png" style="left:32%;bottom:70px;">
-  <!-- right side (contact section) -->
-  <img class="deco-tree tree-mid"  src="sprites/tree-2.png" style="right:8%;bottom:70px;">
-  <img class="deco-tree tree-far"  src="sprites/tree-1.png" style="right:20%;bottom:70px;">
-  <img class="deco-stone"          src="sprites/stone-2.png" style="right:14%;bottom:70px;">
-  <img class="deco-stone"          src="sprites/stone-1.png" style="right:26%;bottom:70px;">
+<!-- OUTDOOR SCENERY (trees + gravestones, behind player) -->
+<div class="scenery" id="scenery">
+  <img class="sc-tree sc-lg" src="sprites/tree-3.png" style="left:5%">
+  <img class="sc-tree sc-md" src="sprites/tree-1.png" style="left:18%">
+  <img class="sc-tree sc-md" src="sprites/tree-2.png" style="left:30%">
+  <img class="sc-stone" src="sprites/stone-1.png" style="left:10%">
+  <img class="sc-stone" src="sprites/stone-2.png" style="left:14%">
+  <img class="sc-stone" src="sprites/stone-4.png" style="left:24%">
+  <img class="sc-stone" src="sprites/stone-3.png" style="left:35%">
+  <img class="sc-tree sc-md" src="sprites/tree-2.png" style="right:6%">
+  <img class="sc-tree sc-lg" src="sprites/tree-1.png" style="right:18%">
+  <img class="sc-stone" src="sprites/stone-1.png" style="right:12%">
+  <img class="sc-stone" src="sprites/stone-3.png" style="right:24%">
 </div>
 
-<!-- FLOOR STRIP (fixed, always visible — outdoor style; indoor overrides via section) -->
-<div class="floor-strip" id="floorStrip"></div>
-
-<!-- PLAYER -->
+<!-- PLAYER SPRITE -->
 <div class="player idle" id="player"></div>
+
+<!-- SCROLL PROMPT (16-bit style, bottom-right) -->
+<div class="scroll-cta" id="scrollCta">▶▶ SCROLL</div>
 
 <!-- SNAP-SCROLL SECTIONS -->
 <div class="scroller" id="scroller">
 
-  <!-- ===== 0. INTRO / TYPEWRITER BIO ===== -->
-  <section class="sec sec-intro" id="sec-intro">
-    <div class="typewriter-wrap" id="twWrap">
-      <div class="tw-text" id="twText"></div>
-      <span class="tw-cursor" id="twCursor">█</span>
-    </div>
-    <div class="scroll-pulse" id="scrollPulse">
-      <span class="pulse-arrow">▶▶</span> SCROLL
+  <!-- 0 — TYPEWRITER INTRO -->
+  <section class="sec sec-intro" id="sec0">
+    <h1 class="tw-header">The Story So Far</h1>
+    <div class="tw-box">
+      <span class="tw-text" id="twText"></span><span class="tw-cursor" id="twCursor">█</span>
     </div>
   </section>
 
-  <!-- ===== 1. TITLE / GRAVEYARD ===== -->
-  <section class="sec sec-outdoor" id="sec-title">
+  <!-- 1 — TITLE / GRAVEYARD (outdoor) -->
+  <section class="sec sec-outdoor" id="sec1">
     <div class="zone">
       <img class="portrait" src="images/Sundhar.jpeg" alt="Sundhar Karunanidi"/>
       <h1>SUNDHAR<br>KARUNANIDI</h1>
@@ -73,18 +71,16 @@
       <p class="sub">C# • Python • JS • Azure • AWS</p>
       <div class="btn-row">
         <a class="pbtn" href="https://medium.com/@sundhardevkarunanidi" target="_blank">ENTER BLOG</a>
-        <a class="pbtn red" data-s="3" href="#">SKIP TO BOSS</a>
+        <a class="pbtn red" href="#" data-s="3">SKIP TO BOSS</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== 2. PROJECT HALL (indoor) ===== -->
-  <section class="sec sec-indoor" id="sec-projects">
-    <!-- castle background panels -->
+  <!-- 2 — PROJECT HALL (indoor) -->
+  <section class="sec sec-indoor" id="sec2">
     <div class="castle-bg"></div>
-    <!-- depth: columns behind character -->
-    <div class="col-deco col-back" style="left:5%"></div>
-    <div class="col-deco col-back" style="right:5%"></div>
+    <div class="col-deco" style="left:3%"></div>
+    <div class="col-deco" style="right:3%"></div>
     <div class="zone">
       <h1>— THE GREAT HALL —</h1>
       <div class="doors">
@@ -108,14 +104,11 @@
         </a>
       </div>
     </div>
-    <!-- depth: columns in front of character -->
-    <div class="col-deco col-front" style="left:18%"></div>
-    <div class="col-deco col-front" style="right:18%"></div>
   </section>
 
-  <!-- ===== 3. BOSS ROOM / CV ===== -->
-  <section class="sec sec-boss-room" id="sec-boss">
-    <div class="castle-bg boss-tint"></div>
+  <!-- 3 — BOSS ROOM / CV (indoor) -->
+  <section class="sec sec-boss-room" id="sec3">
+    <div class="castle-bg"></div>
     <div class="zone">
       <span class="boss-label">— WARNING —</span>
       <div class="boss-sprite" id="bossSprite"></div>
@@ -133,8 +126,8 @@
     </div>
   </section>
 
-  <!-- ===== 4. VICTORY / CONTACT ===== -->
-  <section class="sec sec-outdoor" id="sec-contact">
+  <!-- 4 — VICTORY / CONTACT (outdoor) -->
+  <section class="sec sec-outdoor" id="sec4">
     <div class="zone">
       <h1>— QUEST COMPLETE —</h1>
       <div class="c-info">
@@ -169,135 +162,120 @@
     </div>
   </section>
 
-</div><!-- /scroller -->
+</div>
 
 <script>
 (function(){
-  /* ---- constants ---- */
-  var SECTIONS = 5;  // 0=intro 1=title 2=projects 3=boss 4=contact
-  var BIO = "I'm a full-stack .NET engineer with six years of experience, most recently building the Commercial conveyancing product within a small team at a conveyancing tech company — everything from a high-performance email service with conditional templating logic, to a dynamic form builder with live preview and persistence in AWS S3, to using MongoDB for cross-session data. Before that, I spent over two years at BJSS/CGI on a large-scale gambling platform using event-driven microservices, working across .NET and TypeScript REST APIs and writing the kind of SQL that has to hold up under real production load. That brings me to today.......";
+  var TOTAL = 5; // 0=intro,1=title,2=projects,3=boss,4=contact
+  var BOSS  = 3;
+  var BIO   = "I'm a full-stack .NET engineer with six years of experience, most recently building the Commercial conveyancing product within a small team at a conveyancing tech company \u2014 everything from a high-performance email service with conditional templating logic, to a dynamic form builder with live preview and persistence in AWS S3, to using MongoDB for cross-session data. Before that, I spent over two years at BJSS/CGI on a large-scale gambling platform using event-driven microservices, working across .NET and TypeScript REST APIs and writing the kind of SQL that has to hold up under real production load. That brings me to today.......";
 
-  /* ---- refs ---- */
-  var scroller    = document.getElementById('scroller');
-  var player      = document.getElementById('player');
-  var hpFill      = document.getElementById('hpFill');
-  var loot        = document.getElementById('loot');
-  var bossEl      = document.getElementById('bossSprite');
-  var explEl      = document.getElementById('explosion');
-  var navTog      = document.getElementById('navTog');
-  var navMenu     = document.getElementById('navLinks');
-  var navLinks    = document.querySelectorAll('[data-s]');
-  var floorStrip  = document.getElementById('floorStrip');
-  var outdoorDeco = document.getElementById('outdoorDeco');
-  var twText      = document.getElementById('twText');
-  var twCursor    = document.getElementById('twCursor');
-  var twWrap      = document.getElementById('twWrap');
-  var scrollPulse = document.getElementById('scrollPulse');
+  var scroller = document.getElementById('scroller');
+  var player   = document.getElementById('player');
+  var hpFill   = document.getElementById('hpFill');
+  var loot     = document.getElementById('loot');
+  var bossEl   = document.getElementById('bossSprite');
+  var explEl   = document.getElementById('explosion');
+  var navTog   = document.getElementById('navTog');
+  var navMenu  = document.getElementById('navLinks');
+  var navLinks = document.querySelectorAll('[data-s]');
+  var scenery  = document.getElementById('scenery');
+  var twText   = document.getElementById('twText');
+  var twCursor = document.getElementById('twCursor');
+  var scrollCta= document.getElementById('scrollCta');
 
-  var lastX = 0, scrollTimer = null, wheelLock = false;
-  var bossTriggered = false, bossDefeated = false;
-  var currentSection = 0;
-  var twDone = false;
+  var lastX=0, scrollTimer=null, wheelLock=false;
+  var bossTriggered=false, bossDefeated=false;
 
-  /* ---- mobile nav ---- */
-  navTog.addEventListener('click', function(){ navMenu.classList.toggle('open'); });
+  /* — mobile nav — */
+  navTog.addEventListener('click',function(){navMenu.classList.toggle('open')});
 
-  /* ---- nav / skip buttons ---- */
+  /* — nav/skip links — */
   navLinks.forEach(function(a){
-    a.addEventListener('click', function(e){
+    a.addEventListener('click',function(e){
       e.preventDefault();
-      var idx = parseInt(this.getAttribute('data-s'));
-      scrollToSection(idx);
+      var idx=parseInt(this.getAttribute('data-s'));
+      scroller.scrollTo({left:idx*window.innerWidth,behavior:'smooth'});
       navMenu.classList.remove('open');
     });
   });
 
-  function scrollToSection(idx){
-    scroller.scrollTo({ left: idx * window.innerWidth, behavior: 'smooth' });
-  }
-
-  /* ---- wheel: one section per tick ---- */
-  scroller.addEventListener('wheel', function(e){
+  /* — wheel: one section per tick — */
+  scroller.addEventListener('wheel',function(e){
     e.preventDefault();
-    if (wheelLock) return;
-    if (Math.abs(e.deltaY) < 8) return;
-    wheelLock = true;
-    var vw = window.innerWidth;
-    var cur = Math.round(scroller.scrollLeft / vw);
-    var next = e.deltaY > 0 ? Math.min(cur+1, SECTIONS-1) : Math.max(cur-1, 0);
-    if (next !== cur) scroller.scrollTo({ left: next * vw, behavior: 'smooth' });
-    setTimeout(function(){ wheelLock = false; }, 750);
-  }, { passive: false });
+    if(wheelLock)return;
+    if(Math.abs(e.deltaY)<8)return;
+    wheelLock=true;
+    var vw=window.innerWidth;
+    var cur=Math.round(scroller.scrollLeft/vw);
+    var next=e.deltaY>0?Math.min(cur+1,TOTAL-1):Math.max(cur-1,0);
+    if(next!==cur)scroller.scrollTo({left:next*vw,behavior:'smooth'});
+    setTimeout(function(){wheelLock=false},750);
+  },{passive:false});
 
-  /* ---- keyboard ---- */
-  document.addEventListener('keydown', function(e){
-    var vw = window.innerWidth;
-    var cur = Math.round(scroller.scrollLeft / vw);
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown'){
+  /* — keyboard — */
+  document.addEventListener('keydown',function(e){
+    var vw=window.innerWidth;
+    var cur=Math.round(scroller.scrollLeft/vw);
+    if(e.key==='ArrowRight'||e.key==='ArrowDown'){
       e.preventDefault();
-      scroller.scrollTo({ left: Math.min(cur+1, SECTIONS-1)*vw, behavior:'smooth' });
-    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp'){
+      scroller.scrollTo({left:Math.min(cur+1,TOTAL-1)*vw,behavior:'smooth'});
+    }else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){
       e.preventDefault();
-      scroller.scrollTo({ left: Math.max(cur-1,0)*vw, behavior:'smooth' });
+      scroller.scrollTo({left:Math.max(cur-1,0)*vw,behavior:'smooth'});
     }
   });
 
-  /* ---- scroll handler ---- */
-  scroller.addEventListener('scroll', function(){
-    var sx = scroller.scrollLeft;
-    var dx = sx - lastX;
-    lastX = sx;
-    var vw = window.innerWidth;
+  /* — scroll handler — */
+  scroller.addEventListener('scroll',function(){
+    var sx=scroller.scrollLeft;
+    var dx=sx-lastX;
+    lastX=sx;
 
-    /* parallax (only applies to outdoor — indoor sections cover it) */
-    document.getElementById('bgSky').style.backgroundPositionX   = (-sx*0.03)+'px';
-    document.getElementById('bgMtn').style.backgroundPositionX   = (-sx*0.1)+'px';
-    document.getElementById('bgGrave').style.backgroundPositionX = (-sx*0.25)+'px';
-    outdoorDeco.style.transform = 'translateX(' + (-sx*0.08) + 'px)';
+    // parallax
+    document.getElementById('bgSky').style.backgroundPositionX  =(-sx*0.03)+'px';
+    document.getElementById('bgMtn').style.backgroundPositionX  =(-sx*0.1)+'px';
+    document.getElementById('bgGrave').style.backgroundPositionX=(-sx*0.25)+'px';
+    scenery.style.transform='translateX('+(-sx*0.08)+'px)';
 
-    /* player direction */
-    if (Math.abs(dx) > 0.5){
-      player.className = dx > 0 ? 'player run-r' : 'player run-l';
+    // player run direction
+    if(Math.abs(dx)>0.5){
+      player.className=dx>0?'player run-r':'player run-l';
     }
 
+    // hide scroll cta once moving
+    if(sx>50) scrollCta.classList.remove('show');
+
     clearTimeout(scrollTimer);
-    scrollTimer = setTimeout(onSnap, 200);
+    scrollTimer=setTimeout(onSnap,200);
   });
 
   function onSnap(){
-    var vw  = window.innerWidth;
-    var sec = Math.round(scroller.scrollLeft / vw);
-    currentSection = sec;
+    var vw=window.innerWidth;
+    var sec=Math.round(scroller.scrollLeft/vw);
 
-    /* nav highlight */
+    // nav highlight
     navLinks.forEach(function(a){
-      var s = a.getAttribute('data-s');
-      if (s !== null) a.classList.toggle('on', parseInt(s) === sec);
+      var s=a.getAttribute('data-s');
+      if(s!==null)a.classList.toggle('on',parseInt(s)===sec);
     });
 
-    /* floor style: indoor when on sections 2 or 3 */
-    if (sec === 2 || sec === 3){
-      floorStrip.classList.add('indoor');
-    } else {
-      floorStrip.classList.remove('indoor');
-    }
+    // hide scenery when indoors
+    scenery.style.opacity=(sec===2||sec===3)?'0':'1';
 
-    /* outdoor deco: hide when fully inside */
-    outdoorDeco.style.opacity = (sec === 2 || sec === 3) ? '0' : '1';
-
-    /* player state */
-    if (sec === 3 && !bossDefeated){
+    // boss
+    if(sec===BOSS&&!bossDefeated){
       triggerBoss();
-    } else {
-      player.className = 'player idle';
+    }else{
+      player.className='player idle';
     }
   }
 
-  /* ---- boss sequence ---- */
+  /* — boss encounter — */
   function triggerBoss(){
-    player.className = 'player attack';
-    if (bossTriggered) return;
-    bossTriggered = true;
+    player.className='player attack';
+    if(bossTriggered)return;
+    bossTriggered=true;
     setTimeout(function(){
       hpFill.classList.add('drain');
       setTimeout(function(){
@@ -306,37 +284,37 @@
         setTimeout(function(){
           explEl.classList.remove('go');
           loot.classList.add('show');
-          bossDefeated = true;
-          player.className = 'player idle';
-        }, 900);
-      }, 2600);
-    }, 500);
+          bossDefeated=true;
+          player.className='player idle';
+        },900);
+      },2600);
+    },500);
   }
 
-  /* ---- typewriter intro ---- */
-  var BIO_CHARS = BIO.split('');
-  var twIdx = 0;
-  var twSpeed = 28; // ms per character
-
-  function typeChar(){
-    if (twIdx < BIO_CHARS.length){
-      twText.textContent += BIO_CHARS[twIdx];
+  /* — typewriter — */
+  var chars=BIO.split(''),twIdx=0;
+  function typeNext(){
+    if(twIdx<chars.length){
+      var ch=chars[twIdx];
+      twText.textContent+=ch;
       twIdx++;
-      setTimeout(typeChar, twSpeed);
-    } else {
-      /* finished — hide cursor, show scroll pulse, then fade to title */
-      twCursor.style.display = 'none';
-      scrollPulse.classList.add('show');
-      twDone = true;
+      /* slow drip on the final periods */
+      var delay=(ch==='.'&&twIdx>chars.length-10)?1000:40;
+      setTimeout(typeNext,delay);
+    }else{
+      twCursor.style.display='none';
+      scrollCta.classList.add('show');
     }
   }
+  setTimeout(typeNext,500);
 
-  /* Start typing after short delay */
-  setTimeout(typeChar, 600);
+  /* — scroll-cta click — */
+  scrollCta.addEventListener('click',function(){
+    scroller.scrollTo({left:window.innerWidth,behavior:'smooth'});
+  });
 
-  /* ---- init ---- */
+  /* — init — */
   onSnap();
-
 })();
 </script>
 </body>
